@@ -27,14 +27,16 @@ s = """Hello,
 world!"""
 print(s)
 
+print("-----")
+
 s = "Hello, " \
     "world!"
-
+print(s)
 s = ("Hello, "
      "world")
-
-print("-----")
 print(s)
+print("-----")
+
 
 # Сырые строки
 
