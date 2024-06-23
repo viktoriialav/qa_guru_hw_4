@@ -58,7 +58,7 @@ def test_random_list():
     Создайте список из 10 случайных чисел от 1 до 100 (включая обе границы) и отсортируйте его по возрастанию.
     """
     # TODO создайте список
-    l = sorted(random.randint(1, 101) for _ in range(10))
+    l = sorted(random.randint(1, 100) for _ in range(10))
 
     assert len(l) == 10
     assert all(l[i] <= l[i + 1] for i in range(len(l) - 1))
@@ -70,17 +70,7 @@ def test_unique_elements():
     """
     l = [1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]
     # TODO удалите повторяющиеся элементы
-
-    # # The first way (doesn't save the initial order of elements)
-    # l = list(set(l))
-
-    # The second way (save the initial order of elements)
-    from itertools import groupby
-    l = [elem for elem, _ in groupby(l)]
-
-    # # The third way (save the initial order of elements)
-    # from collections import Counter
-    # l = list(Counter(l))
+    l = list(set(l))
 
     assert isinstance(l, list)
     assert len(l) == 10
